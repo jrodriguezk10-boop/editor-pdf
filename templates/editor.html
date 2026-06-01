@@ -100,53 +100,38 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;min-height:100vh
   <p>Selecciona una herramienta, sube tu archivo y descarga el resultado</p>
 </div>
 
-<!-- GRILLA DE HERRAMIENTAS -->
-<div class="tools-grid" id="toolsGrid">
-  <div class="tool-card" onclick="activarHerramienta('firmar')">
-    <div class="emoji">✍️</div>
-    <div class="nombre">Firma Digital</div>
-    <div class="desc">Firma tus PDFs</div>
-  </div>
+<!-- CATEGORÍA 1: CONVERTIR A -->
+<div style="margin-bottom:8px;margin-top:5px;">
+  <span style="font-size:12px;font-weight:700;color:#302b63;text-transform:uppercase;letter-spacing:0.5px;">📝 CONVERTIR A</span>
+</div>
+<div class="tools-grid">
   <div class="tool-card" onclick="activarHerramienta('word')">
     <div class="emoji">📝</div>
     <div class="nombre">PDF a Word</div>
-    <div class="desc">Convierte a .docx</div>
+    <div class="desc">Documento .docx</div>
   </div>
   <div class="tool-card" onclick="activarHerramienta('excel')">
     <div class="emoji">📊</div>
     <div class="nombre">PDF a Excel</div>
-    <div class="desc">Extrae tablas</div>
+    <div class="desc">Tablas .xlsx</div>
   </div>
   <div class="tool-card" onclick="activarHerramienta('imagenes')">
     <div class="emoji">🖼️</div>
     <div class="nombre">PDF a Imagen</div>
-    <div class="desc">Páginas a PNG</div>
+    <div class="desc">Cada página PNG</div>
   </div>
-  <div class="tool-card" onclick="activarHerramienta('comprimir')">
-    <div class="emoji">🗜️</div>
-    <div class="nombre">Comprimir</div>
-    <div class="desc">Reduce tamaño</div>
+  <div class="tool-card" onclick="activarHerramienta('txt')">
+    <div class="emoji">📄</div>
+    <div class="nombre">PDF a TXT</div>
+    <div class="desc">Texto plano</div>
   </div>
-  <div class="tool-card" onclick="activarHerramienta('dividir')">
-    <div class="emoji">✂️</div>
-    <div class="nombre">Dividir</div>
-    <div class="desc">Extrae páginas</div>
-  </div>
-  <div class="tool-card" onclick="activarHerramienta('eliminar')">
-    <div class="emoji">🗑️</div>
-    <div class="nombre">Eliminar Págs</div>
-    <div class="desc">Quita páginas</div>
-  </div>
-  <div class="tool-card" onclick="activarHerramienta('rotar')">
-    <div class="emoji">🔄</div>
-    <div class="nombre">Rotar</div>
-    <div class="desc">Gira páginas</div>
-  </div>
-  <div class="tool-card" onclick="activarHerramienta('jpga')">
-    <div class="emoji">🖼️→📄</div>
-    <div class="nombre">JPG a PDF</div>
-    <div class="desc">De imágenes</div>
-  </div>
+</div>
+
+<!-- CATEGORÍA 2: CONVERTIR DESDE -->
+<div style="margin-bottom:8px;margin-top:18px;">
+  <span style="font-size:12px;font-weight:700;color:#302b63;text-transform:uppercase;letter-spacing:0.5px;">📄 CONVERTIR DESDE</span>
+</div>
+<div class="tools-grid">
   <div class="tool-card" onclick="activarHerramienta('worda')">
     <div class="emoji">📝→📄</div>
     <div class="nombre">Word a PDF</div>
@@ -157,10 +142,54 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;min-height:100vh
     <div class="nombre">Excel a PDF</div>
     <div class="desc">De .xlsx</div>
   </div>
+  <div class="tool-card" onclick="activarHerramienta('jpga')">
+    <div class="emoji">🖼️→📄</div>
+    <div class="nombre">JPG a PDF</div>
+    <div class="desc">Desde imágenes</div>
+  </div>
+</div>
+
+<!-- CATEGORÍA 3: EDITAR -->
+<div style="margin-bottom:8px;margin-top:18px;">
+  <span style="font-size:12px;font-weight:700;color:#302b63;text-transform:uppercase;letter-spacing:0.5px;">✍️ EDITAR</span>
+</div>
+<div class="tools-grid">
+  <div class="tool-card" onclick="activarHerramienta('firmar')">
+    <div class="emoji">✍️</div>
+    <div class="nombre">Firma Digital</div>
+    <div class="desc">Firma tus PDFs</div>
+  </div>
+  <div class="tool-card" onclick="activarHerramienta('rotar')">
+    <div class="emoji">🔄</div>
+    <div class="nombre">Rotar</div>
+    <div class="desc">Gira páginas</div>
+  </div>
+  <div class="tool-card" onclick="activarHerramienta('eliminar')">
+    <div class="emoji">🗑️</div>
+    <div class="nombre">Eliminar Págs</div>
+    <div class="desc">Quita páginas</div>
+  </div>
+</div>
+
+<!-- CATEGORÍA 4: ORGANIZAR -->
+<div style="margin-bottom:8px;margin-top:18px;">
+  <span style="font-size:12px;font-weight:700;color:#302b63;text-transform:uppercase;letter-spacing:0.5px;">📂 ORGANIZAR</span>
+</div>
+<div class="tools-grid">
   <div class="tool-card" onclick="activarHerramienta('unir')">
     <div class="emoji">📂</div>
     <div class="nombre">Unir PDFs</div>
     <div class="desc">Fusiona varios</div>
+  </div>
+  <div class="tool-card" onclick="activarHerramienta('dividir')">
+    <div class="emoji">✂️</div>
+    <div class="nombre">Dividir PDF</div>
+    <div class="desc">Extrae páginas</div>
+  </div>
+  <div class="tool-card" onclick="activarHerramienta('comprimir')">
+    <div class="emoji">🗜️</div>
+    <div class="nombre">Comprimir</div>
+    <div class="desc">Reduce tamaño</div>
   </div>
 </div>
 
@@ -212,6 +241,7 @@ function activarHerramienta(tipo){
     excel: {title:"📊 PDF a Excel",html: panelSubir("pdf","📊","Sube tu PDF para extraer tablas a Excel","convertirExcel")},
     imagenes: {title:"🖼️ PDF a Imágenes",html: panelSubir("pdf","🖼️","Sube tu PDF para convertir cada página en imagen","convertirImagenes")},
     comprimir: {title:"🗜️ Comprimir PDF",html: panelSubir("pdf","🗜️","Sube tu PDF para comprimirlo","comprimirPDF")},
+    txt: {title:"📄 PDF a TXT",html: panelSubir("pdf","📄","Sube tu PDF para extraer texto a .txt","convertirTXT")},
     dividir: {title:"✂️ Dividir PDF",html: panelDividir()},
     eliminar: {title:"🗑️ Eliminar Páginas",html: panelEliminar()},
     rotar: {title:"🔄 Rotar PDF",html: panelSubir("pdf","🔄","Sube tu PDF para rotarlo 90°","rotarPDF")},
@@ -317,6 +347,7 @@ document.addEventListener("change", function(e){
     else if(title.includes("Dividir")) ejecutarDividir(files[0]);
     else if(title.includes("Eliminar")) ejecutarEliminar(files[0]);
     else if(title.includes("Rotar")) rotarPDF(files[0]);
+else if(title.includes("PDF a TXT")) convertirTXT(files[0]);
     else if(title.includes("JPG")) subirImagenesPDF(files);
     else if(title.includes("Word a PDF")) subirWordPDF(files[0]);
     else if(title.includes("Excel a PDF")) subirExcelPDF(files[0]);
@@ -444,6 +475,18 @@ async function convertirImagenes(f){
   const blob=await r2.blob();const url=URL.createObjectURL(blob);
   const a=document.createElement("a");a.href=url;a.download="PAGINAS_COMO_IMAGENES.zip";a.click();
   toast("✅ Imágenes descargadas!");ocultar();
+}
+
+async function convertirTXT(f){
+  loading("Extrayendo texto...");
+  const form=new FormData(); form.append("pdf",f);
+  const r1=await fetch("/api/upload",{method:"POST",body:form});
+  const d1=await r1.json(); if(!d1.ok){toast(d1.error,true);ocultar();return;}
+  const r2=await fetch(`/api/${d1.sess_id}/convertir/txt`,{method:"POST"});
+  if(!r2.ok){const e=await r2.json();toast(e.error||"Error",true);ocultar();return;}
+  const blob=await r2.blob();const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download="DOCUMENTO.txt";a.click();
+  toast("✅ TXT descargado!");ocultar();
 }
 
 async function comprimirPDF(f){

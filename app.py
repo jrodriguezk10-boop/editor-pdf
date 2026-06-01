@@ -441,6 +441,29 @@ def api_excel_a_pdf():
     except Exception as e:
         return jsonify({"ok": False, "error": str(e)}), 500
 
+# ===== PDF → TXT =====
+@app.route("/api/<sess_id>/convertir/txt", methods=["POST"])
+def api_convertir_txt(sess_id):
+    sess_dir = os.path.join(UPLOAD_DIR, sess_id)
+    pdf_path = os.path.join(sess_dir, "original.pdf")
+    if not os.path.exists(pdf_path):
+        return jsonify({"ok": False, "error": "PDF no encontrado"}), 404
+    try:
+        import fitz
+        doc = fitz.open(pdf_path)
+        texto = ""
+        for i in range(doc.page_count):
+            texto += f"--- Página {i+1} ---\n\n"
+            texto += doc[i].get_text()
+            texto += "\n\n"
+        doc.close()
+        txt_path = os.path.join(sess_dir, "convertido.txt")
+        with open(txt_path, "w", encoding="utf-8") as f:
+            f.write(texto)
+        return send_file(txt_path, as_attachment=True, download_name="DOCUMENTO.txt", mimetype="text/plain")
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)}), 500
+
 # ===== ARCHIVOS ESTÁTICOS =====
 @app.route("/uploads/<path:filename>")
 def serve_uploads(filename):
